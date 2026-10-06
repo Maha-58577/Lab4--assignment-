@@ -1,0 +1,64 @@
+
+?- house = house.
+true.
+
+Explanation: Both are the same, so they match.
+
+
+?- house = abc.
+false.
+
+Explanation: They are different, so they do not match.
+
+
+?- edge(a,b) = edge(C,b).
+C = a.
+
+Explanation: C can be a, so both sides match.
+
+
+?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+Explanation: C becomes a and B becomes d, so they match.
+
+
+?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+Explanation: C becomes a and B becomes d, so they match.
+
+
+?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g,h).
+
+Explanation: A becomes a and B becomes f(g,h), so they match.
+
+
+?- edge(A,A) = edge(b,c).
+false.
+
+Explanation: A must be the same in both places, but b and c are different.
+
+
+?- edge(A,A) = edge(b,b).
+A = b.
+
+Explanation: Both places have b, so A can be b.
+
+
+?- A = B, B = f.
+A = f,
+B = f.
+
+Explanation: A and B become the same, and then both become f.
+
+
+?- A = B, B = f, A = e.
+false.
+
+Explanation: A becomes f, but then it is asked to become e. f and e are different.
+
